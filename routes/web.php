@@ -13,6 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('alat', 'perangkatC@index');
+Route::post('alat', 'perangkatC@store')->name('tambah.perangkat');
+Route::post('alat/ubahip/{idperangkat}', 'perangkatC@ubahip')->name('ubah.ip');
+Route::delete('alat/hapusperangkat/{idperangkat}', 'perangkatC@destroy')->name('hapus.perangkat');
+
+
+
+Route::post('ubahpassword', 'indexC@ubahpassword')->name('ubah.password');
