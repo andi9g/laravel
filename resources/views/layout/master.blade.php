@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>@yield('title')</title>
+  <title>WASPAS</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -39,7 +39,7 @@
               <input type="password" class="form-control" onkeyup="cek();" name="password2" id="inputPassword2" placeholder="ulangi password baru">
             </div>
           </div>
-      
+
 
       <script>
           function cek(){
@@ -83,7 +83,7 @@
       <li class="nav-item">
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
-      
+
     </ul>
 
     <form class="form-inline ml-3">
@@ -95,13 +95,13 @@
           </button>
         </div>
       </div>
-      
+
     </form>
 
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
       <!-- Messages Dropdown Menu -->
-      
+
       <li class="nav-item">
         <a class="nav-link" href="{{ url('logout', []) }}" role="button">
           <i class="fa fa-power-off"></i>
@@ -116,7 +116,7 @@
     <!-- Brand Logo -->
     <a href="{{ url('/home', []) }}" class="brand-link pink-gelapku">
       <h3 class="brand-image rounded-circle bg-info px-1 text-bold bg-danger border-none ml-2" style="padding-top:2px "><font color="gold">SI</font></h3>
-      <span class="brand-text text-bold text-white" style="font-size: 17px;letter-spacing: 2px">Absensi</span>
+      <span class="brand-text text-bold text-white" style="font-size: 17px;letter-spacing: 2px">WASPAS</span>
     </a>
 
     <!-- Sidebar -->
@@ -142,25 +142,50 @@
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column nav-flat nav-legacy" data-widget="treeview" role="menu" data-accordion="false">
             <li class="nav-item hoverku">
-              <a href="{{ url('home', []) }}" class="nav-link @yield('activekuhome')">
+              <a href="{{ url('home', []) }}" class="nav-link @yield('activekuHome')">
                 <i class="nav-icon fa fa-home"></i>
                 <p>
                   Dashboard
                 </p>
               </a>
             </li>
-
-            
             <li class="nav-item hoverku">
-              <hr>
-              <a href="{{ url('perangkat', []) }}" class="nav-link @yield('activekuPerangkat')">
-                <i class="nav-icon fa fa-laptop"></i>
-                <p>
-                  Akses Perangkat
-                </p>
-              </a>
-            </li>
-                
+                <a href="{{ url('lamaran', []) }}" class="nav-link @yield('activekuLamaran')">
+                  <i class="nav-icon fa fa-id-card"></i>
+                  <p>
+                    Daftar Lamaran
+                  </p>
+                </a>
+              </li>
+            <li class="nav-item hoverku">
+                <a href="{{ url('pelamar', []) }}" class="nav-link @yield('activekuPelamar')">
+                  <i class="nav-icon fa fa-users"></i>
+                  <p>
+                    Daftar Pelamar
+                  </p>
+                </a>
+              </li>
+            <li class="nav-item hoverku">
+                <hr>
+                <a href="{{ url('nilai', []) }}" class="nav-link @yield('activekuNilai')">
+                  <i class="nav-icon fa fa-edit"></i>
+                  <p>
+                    Penilaian
+                  </p>
+                </a>
+              </li>
+            <li class="nav-item hoverku">
+                <a href="{{ url('ranking', []) }}" class="nav-link @yield('activekuRanking')">
+                  <i class="nav-icon fa fa-trophy"></i>
+                  <p>
+                    Ranking
+                  </p>
+                </a>
+              </li>
+
+
+
+
 
             <li class="nav-item hoverku">
               <hr>
@@ -171,7 +196,23 @@
                 </p>
               </a>
             </li>
-          
+            <li class="nav-item hoverku">
+                <a href="{{ url('kriteria', []) }}" class="nav-link @yield('activekuKriteria')">
+                    <i class="nav-icon fa fa-laptop"></i>
+                    <p>
+                    Kriteria
+                    </p>
+                </a>
+            </li>
+            <li class="nav-item hoverku">
+                <a href="{{ url('lowongan', []) }}" class="nav-link @yield('activekuLowongan')">
+                    <i class="nav-icon fa fa-users"></i>
+                    <p>
+                    Lowongan
+                    </p>
+                </a>
+            </li>
+
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
@@ -192,15 +233,15 @@
             </div>
           </div><!-- /.container-fluid -->
         </section>
-    
+
         <!-- Main content -->
         <section class="content">
             <div class="container">
                 @yield('content')
             </div>
-    
 
-            
+
+
         </section>
     </div>
     <!-- /.content -->
